@@ -6,8 +6,8 @@ const rl = readline.createInterface({
 });    
 
 function pergunta(questao) {
-    return new Promise((questao){
-        rl.question(questao, (resolve) => {
+    return new Promise((resolve) =>{
+        rl.question(questao, (resposta) => {
             resolve(resposta);
         });
     })
