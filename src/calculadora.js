@@ -13,7 +13,7 @@ function pergunta(questao) {
     });
 };
 
-//Solicitação de input das duas notas ao usuário.
+
 async function inputNotas() {
     const nota1 = await pergunta('Digite sua primeira nota: ');
     const nota2 = await pergunta('Digite sua segunda nota: ');
