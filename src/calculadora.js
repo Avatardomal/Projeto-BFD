@@ -4,7 +4,7 @@ const notas = readline.createInterface({
     output: process.stdout
 });
 
-
+//Fução que faz a pergunta e retorna uma Promise
 function pergunta(questao) {
     return new Promise ((resolve) => {
         notas.question((questao), (resposta) => {
