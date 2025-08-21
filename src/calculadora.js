@@ -4,7 +4,7 @@ const notas = readline.createInterface({
     output: process.stdout
 });
 
-//Criação da função para solicitação de múltiplas perguntas.
+
 function pergunta(questao) {
     return new Promise ((resolve) => {
         notas.question((questao), (resposta) => {
