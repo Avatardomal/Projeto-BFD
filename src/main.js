@@ -14,17 +14,16 @@ function nota(pergunta) {
 }
 
 async function perguntarIdade(){
-    const idade = await nota("Qual é a sua idade?");
-
-    for (let i =1; i <= idade; i++){
-         console.log(`Sua idade é: ${i}`);
-        
-        rl.close();
+    let pessoa = {
+        nome: 'Jean',
+        idade: 40,
+        cidade: "Recife" 
     }
+  
+    for (let k in pessoa) {
+        console.log(`${k} + ${pessoa[k]}`)
+    }
+    rl.close();
 }
 
-    perguntarIdade();
-
-          
-        
-        
+perguntarIdade();
