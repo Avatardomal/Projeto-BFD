@@ -1,25 +1,25 @@
 const readline = require('readline');
-
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout      
 });    
 
-function pergunta(questao) {
-    return new Promise((resolve) =>{
-        rl.question(questao, (resposta) => {
-            resolve(resposta);
+function nota(pergunta) {
+    return new Promise((resolve) => {
+        rl.question(pergunta, (resposta) => {
+            resolve(Number(resposta));
         });
     });
 
-    }
+}
 
-    async function perguntarNome() {
+    async function perguntarIdade() {
         const idade = await pergunta("Qual é a sua idade? ");
 
-        for(let i = 1; i <= idade; i++) {
-            console.log(`nem determinado ano você fez ${i + 1} anos!`);
+        for (let i =1; i <= idade; i++){
+            console.log(`Sua idade é: ${i}');
         }
+        rl.close();
     }
 
     perguntaIdade();
