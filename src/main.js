@@ -10,20 +10,20 @@ function pergunta(questao) {
         rl.question(questao, (resposta) => {
             resolve(resposta);
         });
-    })
- ;
+    });
+
     }
 
     async function perguntarNome() {
         const idade = await pergunta("Qual é a sua idade? ");
 
-        if(idade < 18) {
-            console.log("Você é Menor de idade");
-        } else if (idade > 60) {
-            console.log("Você é idoso");    
-        } else {
-            console.log("Você é adulto");
+        for(let i = 1; i <= idade; i++) {
+            console.log(`nem determinado ano você fez ${i + 1} anos!`);
         }
+    }
+
+    perguntaIdade();
+
           
         
         
