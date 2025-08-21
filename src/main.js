@@ -15,9 +15,15 @@ function pergunta(questao) {
     }
 
     async function perguntarNome() {
-        const primeiroNome = await pergunta("Qual o seu primeiro nome? ");
-        const ultimoNome = await pergunta("Qual o seu último nome? ");
-                     
-        console.log(`Olá, ${primeiroNome} ${ultimoNome}!`);
+        const idade = await pergunta("Qual é a sua idade? ");
 
-    }
+        if(idade < 18) {
+            console.log("Você é Menor de idade");
+        } else if (idade > 60) {
+            console.log("Você é idoso");    
+        } else {
+            console.log("Você é adulto");
+        }
+          
+        
+        
