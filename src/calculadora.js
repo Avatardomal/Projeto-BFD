@@ -34,7 +34,7 @@ async function inputNotas() {
 
 function calcMedia(n1, n2) {
     
-    //Executando cálculo de média.
+    
     let media = (n1 + n2) / 2;
     console.log();
     console.log(`== Nota média = ${media} ==`);
