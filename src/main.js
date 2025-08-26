@@ -1,7 +1,7 @@
 const readline = require("readline");
 
 function medalhaDeAcordoComPosicao(numero) {
-    const posicoes = ["ouro", "prata", "bronze", "nada"];
+    const posicoes = ["Sua posição é ouro", "Sua posição é prata", "Sua posição é bronze", "Sua posição é nada"];
     if (numero >= 1 && numero <= 3) {
         return posicoes[numero - 1];
     }
@@ -13,8 +13,10 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Digite a posição (número): ", (input) => {
+rl.question("Qual sua posição na corrida? (número): ", (input) => {
     const numero = parseInt(input);
     console.log(medalhaDeAcordoComPosicao(numero));
     rl.close();
 });
+
+retornarMedalhaDeAcordoComPosicao = medalhaDeAcordoComPosicao;
