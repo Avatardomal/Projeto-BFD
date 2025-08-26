@@ -1,52 +1,20 @@
 const readline = require("readline");
-const notas = readline.createInterface({
+
+function medalhaDeAcordoComPosicao(numero) {
+    const posicoes = ["ouro", "prata", "bronze", "nada"];
+    if (numero >= 1 && numero <= 3) {
+        return posicoes[numero - 1];
+    }
+    return posicoes[3];
+}
+
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-//Fução que faz a pergunta e retorna uma Promise
-function pergunta(questao) {
-    return new Promise ((resolve) => {
-        notas.question((questao), (resposta) => {
-            resolve(resposta);
-        });
-    });
-};
-
-
-async function inputNotas() {
-    const nota1 = await pergunta('Digite sua primeira nota: ');
-    const nota2 = await pergunta('Digite sua segunda nota: ');
-
-    const n1 = parseFloat(nota1);
-    const n2 = parseFloat(nota2);
-
-    if (n1 > 10 || n2 > 10 || n1 < 0 || n2 < 0 || isNaN(n1) || isNaN(n2)) {
-        console.log();
-        console.log('=== Notas digitadas de maneira inválida! O sistema não aceitará textos e as notas precisam ser números entre 0 e 10! ===');
-        console.log('=== Digite suas notas novamente: ===');
-        console.log();
-        return inputNotas();
-    } else {
-        calcMedia(n1, n2);
-    };
-};
-
-function calcMedia(n1, n2) {
-    
-    
-    let media = (n1 + n2) / 2;
-    console.log();
-    console.log(`== Nota média = ${media} ==`);
-
-    if (media >= 7) {
-         console.log('== Situação: Aprovado(a). ==');
-         console.log();
-     } else {
-        console.log('== Situação: Reprovado(a). ==');
-        console.log();
-    };
-    notas.close();
-};
-
- inputNotas();
+rl.question("Digite a posição (número): ", (input) => {
+    const numero = parseInt(input);
+    console.log(medalhaDeAcordoComPosicao(numero));
+    rl.close();
+});
