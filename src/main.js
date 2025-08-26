@@ -1,7 +1,7 @@
 const readline = require("readline");
 
 function medalhaDeAcordoComPosicao(numero) {
-    const posicoes = ["Sua posição é ouro", "Sua posição é prata", "Sua posição é bronze", "Sua posição é nada"];
+    const posicoes = ["Parabéns sua posição é ouro", "Parabéns sua é prata", "Parabéns sua é bronze", "Infelzmente você não se classificou"];
     if (numero >= 1 && numero <= 3) {
         return posicoes[numero - 1];
     }
