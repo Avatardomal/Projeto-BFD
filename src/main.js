@@ -32,7 +32,12 @@ async function perguntarIdade(){
 
     console.log(map);
     // Expected output: Array [2, 8, 18, 32]
-    
+
+    for (let i = 0; i < map.length; i++) {
+  console.log(map[i]);
+}
+
+
     rl.close();
 
 
