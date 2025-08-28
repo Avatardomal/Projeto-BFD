@@ -1,22 +1,33 @@
-const readline = require("readline");
-
-function medalhaDeAcordoComPosicao(numero) {
-    const posicoes = ["Parabéns sua posição é ouro", "Parabéns sua é prata", "Parabéns sua é bronze", "Infelzmente você não se classificou"];
-    if (numero >= 1 && numero <= 3) {
-        return posicoes[numero - 1];
+class Carro {
+    constructor(marca, cor, ano) {
+        this.marca = marca;
+        this.cor = cor;
+        this.ano = ano;
+        this.velocidade = 0;
     }
-    return posicoes[3];
+
+    acelerar() {
+        this.velocidade += 10;
+    }
+
+    frear() {
+        this.velocidade -= 10;
+        if (this.velocidade < 0) this.velocidade = 0;
+    }
+
+    mostrarInfo() {
+        console.log(`Marca: ${this.marca}, Cor: ${this.cor}, Ano: ${this.ano}, Velocidade: ${this.velocidade} km/h`);
+    }
 }
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// Criando dois objetos da classe Carro
+const carro1 = new Carro('Toyota', 'Vermelho', 2020);
+const carro2 = new Carro('Ford', 'Azul', 2018);
 
-rl.question("Qual sua posição na corrida? (número): ", (input) => {
-    const numero = parseInt(input);
-    console.log(medalhaDeAcordoComPosicao(numero));
-    rl.close();
-});
+// Acelerando o carro1
+carro1.acelerar();
 
-retornarMedalhaDeAcordoComPosicao = medalhaDeAcordoComPosicao;
+// Mostrando o estado dos dois carros
+carro1.mostrarInfo();
+carro2.mostrarInfo();
+
