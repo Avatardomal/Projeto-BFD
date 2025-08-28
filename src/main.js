@@ -21,8 +21,8 @@ class Carro {
 }
 
 // Criando dois objetos da classe Carro
-const carro1 = new Carro('Toyota', 'Vermelho', 2020);
-const carro2 = new Carro('Ford', 'Azul', 2018);
+let carro1 = new Carro('Toyota', 'Vermelho', 2020);
+let carro2 = new Carro('Ford', 'Azul', 2018);
 
 // Acelerando o carro1
 carro1.acelerar();
