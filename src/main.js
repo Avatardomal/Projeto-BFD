@@ -1,33 +1,12 @@
-class Carro {
-    constructor(marca, cor, ano) {
-        this.marca = marca;
-        this.cor = cor;
-        this.ano = ano;
-        this.velocidade = 0;
-    }
+console.log("Olá, Mundo!"); //String = Texto
+console.log(`"Este é o meu primeiro código" em 'JavaScript!'`);
 
-    acelerar() {
-        this.velocidade += 10;
-    }
+console.log(123456); //Number = Número
+console.log(12.345); //Number = Número com ponto flutuante
+console.log(123 + 456); //Number = Número com operação matemática
+console.log(40,15.85, 'Testanto vírgula'); //Number = Número com operação matemática
+console.log(123456, "Testanto vírgula", 12.345); //Number = Número com operação matemática
 
-    frear() {
-        this.velocidade -= 10;
-        if (this.velocidade < 0) this.velocidade = 0;
-    }
 
-    mostrarInfo() {
-        console.log(`Marca: ${this.marca}, Cor: ${this.cor}, Ano: ${this.ano}, Velocidade: ${this.velocidade} km/h`);
-    }
-}
 
-// Criando dois objetos da classe Carro
-let carro1 = new Carro('Toyota', 'Vermelho', 2020);
-let carro2 = new Carro('Ford', 'Azul', 2018);
-
-// Acelerando o carro1
-carro1.acelerar();
-
-// Mostrando o estado dos dois carros
-carro1.mostrarInfo();
-carro2.mostrarInfo();
 
