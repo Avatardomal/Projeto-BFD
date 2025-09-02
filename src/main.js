@@ -1,22 +1,43 @@
-//               0123456789
+// 1. Classe Livro
+class Livro {
+  constructor(titulo, autor) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.emprestado = false;
+  }
 
-let umaString = "Um texto";
+  // Mostrar estado do livro
+  mostrarInfo() {
+    const status = this.emprestado ? "emprestado" : "disponível";
+    return `Livro: ${this.titulo} (${this.autor}) - ${status}`;
+  }
+}
 
-console.log(umaString.concat(' ', 'em', ' ', 'um', ' ',  'lindo', ' ', 'dia')); // Retorna o caractere que está na posição 3 da string
-console.log(umaString + ' em um lindo dia'); // Retorna o caractere que está na posição 3 da string
-console.log(`${umaString} em um lindo dia`); // Retorna o caractere que está na posição 3 da string
-console.log(umaString.indexOf('Um texto')); // Retorna o índice do caractere "t" na string
-console.log(umaString.lastIndexOf('m')); // Retorna o índice do caractere "m" na string
-console.log(umaString.match(/[a-z]/g)); // Retorna um array com as letras de "a" a "z"
-console.log(umaString.match(/[a-z]/)); // Retorna um array com a primeira letra de "a" a "z"
-console.log(umaString.search(/x/)); // Retorna o índice do caractere "x" na string
-console.log(umaString.replace('Um', 'Outro')); // Substitui a palavra "Um" por "Outro"
-console.log(umaString.length); // Retorna o tamanho da string
-console.log(umaString.slice(3, 7)); // Retorna os caracteres entre os índices 3 e 7
-console.log(umaString.slice(-3)); // Retorna os últimos 3 caracteres
-console.log(umaString.split(' ')); // Retorna um array quebrando a string pelo espaço
-console.log(umaString.toUpperCase()); // Retorna a string em letras maiúsculas
-console.log(umaString.toLowerCase()); // Retorna a string em letras minúsculas
-console.log(umaString.trim()); // Retorna a string sem espaços no início e no fim da string
-console.log(umaString.split('')); // Retorna um array quebrando a string por cada caractere
+// 2. Classe Usuario
+class Usuario {
+  constructor(nome) {
+    this.nome = nome;
+  }
 
+  // 3. Método pegarLivro
+  pegarLivro(livro) {
+    if (!livro.emprestado) {
+      livro.emprestado = true;
+      console.log(`${this.nome} pegou o livro "${livro.titulo}"`);
+    } else {
+      console.log(`O livro "${livro.titulo}" já está emprestado.`);
+    }
+  }
+}
+
+// 4. Criando um usuário e dois livros
+const usuario1 = new Usuario("João");
+const livro1 = new Livro("Chico Xavier", "Frei Damião");
+const livro2 = new Livro("A Pomba voadora", "Menino Jesus");
+
+// 5. Usuário pega um livro
+usuario1.pegarLivro(livro1);
+
+// 6. Mostrar o estado dos livros no console
+console.log(livro1.mostrarInfo());
+console.log(livro2.mostrarInfo());
