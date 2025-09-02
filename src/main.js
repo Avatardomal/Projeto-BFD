@@ -23,6 +23,9 @@
 // let nomeCompleto = 'Jean Celerino'; // Certo
 // Case-sensitive
 // let nome = 'Jean'; // Criou a variável nome
+// Não utilize var, utilize let (ES6) ou const (ES6)
+// var nome = 'Jean'; // Não ultilizar
+// let nome = 'Jean'; // Ultilizar
 
 let nome = 'Jean Celerino';
 let nomeEsposa = 'Erica';
