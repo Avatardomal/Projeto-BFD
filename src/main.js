@@ -1,41 +1,33 @@
-// 1. Classe ContaBancaria
-class ContaBancaria {
-  constructor(titular, saldoInicial) {
-    this.titular = titular;
-    this.saldo = saldoInicial;
-  }
-
-  // 2. Métodos
-
-  // Depositar valor
-  depositar(valor) {
-    this.saldo += valor;
-    console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.saldo}`);
-  }
-
-  // Sacar valor (com validação de saldo)
-  sacar(valor) {
-    if (valor <= this.saldo) {
-      this.saldo -= valor;
-      console.log(`Saque de R$${valor} realizado. Novo saldo: R$${this.saldo}`);
-    } else {
-      console.log(
-        `Saldo insuficiente! Tentativa de saque de R$${valor}, saldo atual: R$${this.saldo}`
-      );
+class Carro {
+    constructor(marca, cor, ano) {
+        this.marca = marca;
+        this.cor = cor;
+        this.ano = ano;
+        this.velocidade = 0;
     }
-  }
 
-  // Mostrar saldo
-  mostrarSaldo() {
-    console.log(`Saldo atual de ${this.titular}: R$${this.saldo}`);
-  }
+    acelerar() {
+        this.velocidade += 10;
+    }
+
+    frear() {
+        this.velocidade -= 10;
+        if (this.velocidade < 0) this.velocidade = 0;
+    }
+
+    mostrarInfo() {
+        console.log(`Marca: ${this.marca}, Cor: ${this.cor}, Ano: ${this.ano}, Velocidade: ${this.velocidade} km/h`);
+    }
 }
 
-// 3. Criar conta com saldo inicial de R$1000
-const conta1 = new ContaBancaria("Maria", 1000);
+// Criando dois objetos da classe Carro
+let carro1 = new Carro('Toyota', 'Vermelho', 2020);
+let carro2 = new Carro('Ford', 'Azul', 2018);
 
-// 4. Operações
-conta1.depositar(500);   // Depósito de R$500
-conta1.sacar(200);       // Saque de R$200
-conta1.sacar(2000);      // Saque maior que o saldo
-conta1.mostrarSaldo();   // Mostrar saldo final
+// Acelerando o carro1
+carro1.acelerar();
+carro2.frear(); // carro2 está parado, então a velocidade permanece 0
+
+// Mostrando o estado dos dois carros
+carro1.mostrarInfo();
+carro2.mostrarInfo();
