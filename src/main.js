@@ -1,33 +1,47 @@
+// 1. Classe Carro
 class Carro {
-    constructor(marca, cor, ano) {
-        this.marca = marca;
-        this.cor = cor;
-        this.ano = ano;
-        this.velocidade = 0;
-    }
+  constructor(placa, cor) {
+    this.placa = placa;
+    this.cor = cor;
+  }
 
-    acelerar() {
-        this.velocidade += 10;
-    }
-
-    frear() {
-        this.velocidade -= 10;
-        if (this.velocidade < 0) this.velocidade = 0;
-    }
-
-    mostrarInfo() {
-        console.log(`Marca: ${this.marca}, Cor: ${this.cor}, Ano: ${this.ano}, Velocidade: ${this.velocidade} km/h`);
-    }
+  // Método para exibir informações do carro
+  mostrarInfo() {
+    return `Carro - Placa: ${this.placa}, Cor: ${this.cor}`;
+  }
 }
 
-// Criando dois objetos da classe Carro
-let carro1 = new Carro('Toyota', 'Vermelho', 2020);
-let carro2 = new Carro('Ford', 'Azul', 2018);
+// 2. Classe Estacionamento
+class Estacionamento {
+  constructor() {
+    this.vagas = []; // array vazio
+  }
 
-// Acelerando o carro1
-carro1.acelerar();
-carro2.frear(); // carro2 está parado, então a velocidade permanece 0
+  // Adicionar carro
+  adicionarCarro(carro) {
+    this.vagas.push(carro);
+    console.log(`Carro com placa ${carro.placa} estacionado.`);
+  }
 
-// Mostrando o estado dos dois carros
-carro1.mostrarInfo();
-carro2.mostrarInfo();
+  // Listar carros estacionados
+  listarCarros() {
+    console.log("=== Carros estacionados ===");
+    this.vagas.forEach((carro, index) => {
+      console.log(`${index + 1}. ${carro.mostrarInfo()}`);
+    });
+  }
+}
+
+// 3. Criar 3 objetos Carro
+const carro1 = new Carro("ABC-1234", "Vermelho");
+const carro2 = new Carro("XYZ-5678", "Preto");
+const carro3 = new Carro("JKL-9101", "Branco");
+
+// 4. Criar um Estacionamento e adicionar os carros
+const estacionamento = new Estacionamento();
+estacionamento.adicionarCarro(carro1);
+estacionamento.adicionarCarro(carro2);
+estacionamento.adicionarCarro(carro3);
+
+// 5. Listar carros no console
+estacionamento.listarCarros();
