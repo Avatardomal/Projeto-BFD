@@ -1,68 +1,14 @@
-/* 
-- Aritimetica Simples + - / * %
- * + Adição / Concatenação EX:
- * console.log(2 + 2);
- * console.log("2" + "2");
- * console.log("2" + 2);
- * console.log(2 + "2");
- 
-    * - Subtração EX
-    * console.log(2 - 2);
-    * console.log("2" - "2");
-    * console.log("2" - 2);
-    * console.log(2 - "2");
+let varA = 'A'; // B
+let varB = 'B'; // C
+let varC = 'C'; // A
 
-    * / Divisão EX  
-    * console.log(2 / 2);
-    * console.log("2" / "2");
-    * console.log("2" / 2);
-    * console.log(2 / "2");
-    * * * Multiplicação EX
-    * console.log(2 * 2);
-    * console.log("2" * "2");
-    * console.log("2" * 2);
-    * console.log(2 * "2");
-    * % Resto da Divisão EX
-    * console.log(11 % 2);
-    * console.log(10 % 2);
+/* Opção de resolução 1
+const varATemp = varA;
+varA = varB;
+varB = varC;
+varC = varATemp;
 */
 
-/* Ordem de Precedência
- * 1 = ()
- * 2 = **
- * 2 = * / %
- * 3 = + -
-*/
+[varA, varB, varC] = [varB, varC, varA]; // Opção de resolução 2 - Destructuring
 
-//const num1 = 10;
-//const num2 = 5;
-//const num3 = 2;
-//console.log(num1 + num2 * num3); // Ordem de precedência
-//console.log((num1 + num2) * num3); // Ordem de precedência com parênteses
-
-// Incremento ++ Decremento --
-//let contador = 1;
-//contador++; // 2;
-
-/*
-const passo = 50; 
-let contador = 0;
-contador++; 
-
-contador += passo; 
-contador += passo; 
-contador += passo; // contador = contador + passo
-console.log(contador);
-*/
-
-//NaN - Not a Number
-//console.log(100 / "Maçã");
-//console.log(100 * "Maçã");
-//console.log(100 - "Maçã");
-
-let contador = 2;   
-contador *= 2; // contador = contador * 2   
-contador *= 2; // contador = contador * 2
-contador *= 2; // contador = contador * 2
-console.log(contador);
-
+console.log(varA, varB, varC);
