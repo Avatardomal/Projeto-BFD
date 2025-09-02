@@ -1,43 +1,41 @@
-// 1. Criação da Classe do Livro
-class Livro {
-  constructor(titulo, autor) {
-    this.titulo = titulo;
-    this.autor = autor;
-    this.emprestado = false;
+// 1. Classe ContaBancaria
+class ContaBancaria {
+  constructor(titular, saldoInicial) {
+    this.titular = titular;
+    this.saldo = saldoInicial;
   }
 
-  // Mostrando estado do livro
-  mostrarInfo() {
-    const status = this.emprestado ? "emprestado" : "disponível";
-    return `Livro: ${this.titulo} (${this.autor}) - ${status}`;
-  }
-}
+  // 2. Métodos
 
-// 2. Criando a Classe Usuario
-class Usuario {
-  constructor(nome) {
-    this.nome = nome;
+  // Depositar valor
+  depositar(valor) {
+    this.saldo += valor;
+    console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.saldo}`);
   }
 
-  // 3. Método pegarLivro
-  pegarLivro(livro) {
-    if (!livro.emprestado) {
-      livro.emprestado = true;
-      console.log(`${this.nome} pegou o livro "${livro.titulo}"`);
+  // Sacar valor (com validação de saldo)
+  sacar(valor) {
+    if (valor <= this.saldo) {
+      this.saldo -= valor;
+      console.log(`Saque de R$${valor} realizado. Novo saldo: R$${this.saldo}`);
     } else {
-      console.log(`O livro "${livro.titulo}" já está emprestado.`);
+      console.log(
+        `Saldo insuficiente! Tentativa de saque de R$${valor}, saldo atual: R$${this.saldo}`
+      );
     }
   }
+
+  // Mostrar saldo
+  mostrarSaldo() {
+    console.log(`Saldo atual de ${this.titular}: R$${this.saldo}`);
+  }
 }
 
-// 4. Criando um usuário e dois livros
-const usuario1 = new Usuario("João");
-const livro1 = new Livro("Chico Xavier", "Frei Damião");
-const livro2 = new Livro("A Pomba voadora", "Menino Jesus");
+// 3. Criar conta com saldo inicial de R$1000
+const conta1 = new ContaBancaria("Maria", 1000);
 
-// 5. Usuário pega um livro
-usuario1.pegarLivro(livro1);
-
-// 6. Mostrar o estado dos livros no console
-console.log(livro1.mostrarInfo());
-console.log(livro2.mostrarInfo());
+// 4. Operações
+conta1.depositar(500);   // Depósito de R$500
+conta1.sacar(200);       // Saque de R$200
+conta1.sacar(2000);      // Saque maior que o saldo
+conta1.mostrarSaldo();   // Mostrar saldo final
