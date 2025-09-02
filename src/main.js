@@ -1,4 +1,4 @@
-// 1. Classe Livro
+// 1. Criação da Classe do Livro
 class Livro {
   constructor(titulo, autor) {
     this.titulo = titulo;
@@ -6,14 +6,14 @@ class Livro {
     this.emprestado = false;
   }
 
-  // Mostrar estado do livro
+  // Mostrando estado do livro
   mostrarInfo() {
     const status = this.emprestado ? "emprestado" : "disponível";
     return `Livro: ${this.titulo} (${this.autor}) - ${status}`;
   }
 }
 
-// 2. Classe Usuario
+// 2. Criando a Classe Usuario
 class Usuario {
   constructor(nome) {
     this.nome = nome;
