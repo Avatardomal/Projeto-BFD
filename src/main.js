@@ -56,3 +56,4 @@ rl.question("Digite a hora de entrada (ex: 9 ou 9.5): ", (entrada) => {
     rl.close();
   });
 });
+
