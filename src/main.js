@@ -147,7 +147,7 @@ function mostrarMenu() {
     console.log("6 - Usuário pegar item");
     console.log("7 - Usuário devolver item");
     console.log("8 - Listar itens do usuário");
-    console.log("9 - Listar usuários"); // 🔥 Nova opção
+    console.log("9 - Listar usuários"); 
     console.log("0 - Sair");
 }
 
